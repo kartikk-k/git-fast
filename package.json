@@ -1,15 +1,31 @@
 {
-  "name": "git-fast",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@types/prompts": "^2.4.9",
-    "prompts": "^2.4.2"
-  }
+    "name": "git-fast",
+    "version": "0.1.1",
+    "description": "A fast git CLI tool.",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "type": "module",
+    "bin": {
+        "git-fast": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "@types/bun": "latest",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@types/prompts": "^2.4.9",
+        "prompts": "^2.4.2"
+    },
+    "author": "",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": ""
+    }
 }

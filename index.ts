@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 import prompts from 'prompts';
-import { $ } from 'bun';
+import { execSync } from 'child_process';
 
 async function main() {
-  const stdout = await $`git branch --list | cat`.text();
+  const stdout = execSync('git branch --list | cat').toString();
   const branches = stdout
     .split('\n')
     .map((branch: string) => branch.trim())
@@ -23,11 +24,11 @@ async function main() {
 
   if (response.branch) {
     try {
-        await $`git checkout ${response.branch}`.quiet();
+        execSync(`git checkout ${response.branch}`, { stdio: 'pipe' });
         console.log(`Switched to branch '${response.branch}'`);
     } catch (error: any) {
         let errorMessage = "Unknown error";
-        if (error && typeof error.stderr === 'object' && error.stderr instanceof Buffer) {
+        if (error && error.stderr) {
            errorMessage = error.stderr.toString().trim();
         } else if (error instanceof Error) {
             errorMessage = error.message;
