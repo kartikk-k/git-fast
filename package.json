@@ -1,6 +1,6 @@
 {
     "name": "git-fast",
-    "version": "0.1.1",
+    "version": "1.0.1",
     "description": "A fast git CLI tool.",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -9,7 +9,8 @@
         "git-fast": "dist/index.js"
     },
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "dev": "npm run build && node dist/index.js"
     },
     "files": [
         "dist"

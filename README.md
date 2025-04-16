@@ -1,15 +1,21 @@
 # git-fast
 
-To install dependencies:
+git-fast is a command-line tool that allows you to quickly switch between Git branches using an interactive prompt.
+
+## Installation
 
 ```bash
-bun install
+npm i -g git-fast
 ```
 
-To run:
+## Usage
 
 ```bash
-bun run index.ts
+git-fast
 ```
 
-This project was created using `bun init` in bun v1.1.34. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To run the tool directly (e.g., during development):
+
+```bash
+bun run dev
+```
